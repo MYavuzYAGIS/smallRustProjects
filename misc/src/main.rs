@@ -1,3 +1,4 @@
+// smart pointers
 use std::rc::Rc;
 fn main() {
     let pointer = Rc::new(1);
@@ -6,4 +7,10 @@ fn main() {
         println!("{}", *second_pointer);
     }
     println!("{}", *pointer);
+
+    let pointer_a = Rc::new(2);
+
+    let pointer_b = pointer_a.clone();
+
+    println!("{} , {}", *pointer_a, *pointer_b);
 }
